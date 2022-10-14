@@ -12,3 +12,5 @@ gem "sprockets-rails"
 # gem "debug", ">= 1.0.0"
 
 gem "devise"
+gem "omniauth"
+gem "omniauth-github"
