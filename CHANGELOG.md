@@ -12,9 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [BUGFIX: ---------------](https://github.com/fastruby/ombu_labs-auth/-----)
 ```
 
-## main [(unreleased)](https://github.com/fastruby/ombu_labs-auth/compare/6efa57eda3bd3f93e0f245342eb2a317574c32ff...main)
+## main [(unreleased)](https://github.com/fastruby/ombu_labs-auth/compare/v0.1.0...main)
+
+*
+
+## v0.1.0 / 2022-10-20
 
 * [FEATURE: Add Devise](https://github.com/fastruby/ombu_labs-auth/pull/2)
-* [FEATURE: Add Omniauth](https://github.com/fastruby/ombu_labs-auth/pull/3)
+* [FEATURE: Add OmniAuth](https://github.com/fastruby/ombu_labs-auth/pull/3)
+* [FEATURE: Initial Gemspec Configuration](https://github.com/fastruby/ombu_labs-auth/pull/11)
+* [FEATURE: Initial README.md](https://github.com/fastruby/ombu_labs-auth/pull/12)
+* [FEATURE: Initial CHANGELOG.md](https://github.com/fastruby/ombu_labs-auth/pull/13)
 
 
