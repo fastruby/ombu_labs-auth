@@ -38,7 +38,7 @@ GITHUB_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - Add these lines to your application's Gemfile:
 
 ```ruby
-gem 'ombu_labs-auth', path: 'lib/ombu_labs-auth'
+gem 'ombu_labs-auth'
 gem 'omniauth-github', '~> 2.0.0'
 ```
 
