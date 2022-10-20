@@ -3,10 +3,10 @@ require_relative "lib/ombu_labs/auth/version"
 Gem::Specification.new do |spec|
   spec.name        = "ombu_labs-auth"
   spec.version     = OmbuLabs::Auth::VERSION
-  spec.authors     = ["Ombulabs"]
+  spec.authors     = ["OmbuLabs"]
   spec.email       = ["tiago@ombulabs.com", "ernesto+@ombulabs.com"]
   spec.homepage    = "https://github.com/fastruby/ombu_labs-auth"
-  spec.summary     = "Ombulabs internal authentication gem"
+  spec.summary     = "OmbuLabs internal authentication gem"
   spec.description = "Helps us authenticate teammates using GitHub Oauth and Devise"
   spec.license     = "MIT"
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
