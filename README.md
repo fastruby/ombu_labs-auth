@@ -39,7 +39,6 @@ GITHUB_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ```ruby
 gem 'ombu_labs-auth'
-gem 'omniauth-github', '~> 2.0.0'
 ```
 
 - And then execute:
