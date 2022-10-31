@@ -1,14 +1,18 @@
-module OmbuLabs::Auth
-  class User < ApplicationRecord
-    self.table_name = "users"
+require "active_support/concern"
 
+module OmbuLabsAuthenticable
+  extend ActiveSupport::Concern
+  
+  included do
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable
     devise :database_authenticatable, :registerable,
             :recoverable, :rememberable, :trackable,
             :validatable, :omniauthable
-    
-    def self.from_omniauth(auth)
+  end
+
+  class_methods do    
+    def from_omniauth(auth)
       user_attributes = {
         email: auth.info.email,
         name: auth.info.name,

@@ -5,6 +5,9 @@ This gem provides an easy way to generate new (Devise) sessions for members of a
 If a user is signing in with GitHub and they are a (public) member of the configured GitHub organization, they will be allowed in.
 
 ## Environment Variables
+
+### GitHub Login
+
 Make sure you configure your ENV variables to use Github authentication.
 
 ```
@@ -33,6 +36,11 @@ Once you create the app and generate credentials for it, make sure you add them 
 GITHUB_APP_ID=xxxxxxxxxxxxxxxxxxxx
 GITHUB_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
+
+### Developer Login
+
+To avoid the need of a GitHub application setup (useful for local development or Heroku Review Apps), the `developer` strategy can be enabled using setting a `SHOW_DEVELOPER_AUTH` variable with any non-blank value (`SHOW_DEVELOPER_AUTH=1` or `SHOW_DEVELOPER_AUTH=true` for example).
+
 ## Getting Started
 
 - Add these lines to your application's Gemfile:
@@ -42,6 +50,7 @@ gem 'ombu_labs-auth'
 ```
 
 - And then execute:
+
 ```bash
 $ bundle
 ```
@@ -63,9 +72,27 @@ mount OmbuLabs::Auth::Engine, at: '/', as: 'ombu_labs_auth'
 
 - Add the Devise authentication helper to your private objects controllers
 
-```
+```rb
 before_action :authenticate_user!
 ```
+
+- Include the `OmbuLabsAuthenticable` concern in the authenticable model
+
+```rb
+class User < ApplicationRecord
+  include OmbuLabsAuthenticable
+  ...
+end
+```
+
+- Tell `OmbuLabs::Auth` the class name for the authenticable model
+
+```rb
+# config/initializers/ombu_labs-auth.rb
+OmbuLabs::Auth.user_class = 'User'
+```
+
+### TODO: create a rails template to do all the previous steps automatically
 
 ## Caveats
 
@@ -78,4 +105,5 @@ Have a fix for a problem you've been running into or an idea for a new feature y
 Take a look at the [Contributing document](https://github.com/fastruby/ombu_labs-auth/blob/main/CONTRIBUTING.md) for instructions to set up the repo on your machine and create a good Pull Request.
 
 ## License
+
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
