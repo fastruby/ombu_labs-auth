@@ -8,6 +8,7 @@ require "omniauth/rails_csrf_protection"
 module OmbuLabs
   module Auth
     mattr_accessor :user_class_name
+    mattr_accessor :users_table_name
 
     def self.user_class_name
       @@user_class_name || 'User'
@@ -15,6 +16,10 @@ module OmbuLabs
 
     def self.user_class
       @@user_class ||= user_class_name.constantize
+    end
+
+    def self.users_table_name
+      @@users_table_name || :users
     end
   end
 end

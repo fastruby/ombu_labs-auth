@@ -1,0 +1,8 @@
+<h2 class="new-edit-title">Sign in</h2>
+
+<% if flash[:error] %>
+  <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
+<% end %>
+<%- Devise.omniauth_providers.each do |provider| %>
+  <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(OmbuLabs::Auth.user_class, provider), method: :post %><br />
+<% end -%>

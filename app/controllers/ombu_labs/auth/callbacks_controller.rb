@@ -3,7 +3,7 @@ require "open-uri"
 module OmbuLabs
   module Auth
     class CallbacksController < Devise::OmniauthCallbacksController
-      skip_before_action :verify_authenticity_token, only: :developer
+      skip_before_action :verify_authenticity_token
 
       def github
         username = request.env["omniauth.auth"]["extra"]["raw_info"]["login"]
