@@ -145,6 +145,10 @@ To use a `link_to` helper instead of a `button_to` helper to, rails-ujs is neede
 
 > If this intermediate page is not needed, the button/link to `omniauth_authorize_path` can be used directly.
 
+## Running tests
+
+Run `rake app:test:all` to run all tests and `rake app:test` to skip system tests.
+
 ## Caveats
 
 Please be aware this gem is a mountable engine which depends on Devise, and it's not possible to mount it multiple times. Refer to their Wiki for more on the issue - https://github.com/heartcombo/devise/wiki/How-To:-Use-devise-inside-a-mountable-engine
