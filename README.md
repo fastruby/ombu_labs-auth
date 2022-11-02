@@ -109,7 +109,7 @@ end
 
 ```rb
 # config/initializers/ombu_labs-auth.rb
-OmbuLabs::Auth.user_class = "Admin" # defaults to "User" if not set
+OmbuLabs::Auth.user_class_name = "Admin" # defaults to "User" if not set
 OmbuLabs::Auth.users_table_name = :admins # defaults to :users if not set
 ```
 
