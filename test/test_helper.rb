@@ -1,5 +1,8 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
+ENV["GITHUB_APP_ID"] = "1234"
+ENV["GITHUB_APP_SECRET"] = "1234"
+ENV["ORGANIZATION_LOGIN"] = "my_org"
 
 require_relative "../test/dummy/config/environment"
 ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]

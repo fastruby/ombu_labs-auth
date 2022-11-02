@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  mount OmbuLabs::Auth::Engine => "/ombu_labs-auth"
+  mount OmbuLabs::Auth::Engine => "/", as: "ombu_labs_auth"
+
+  root to: "users#index"
 end
