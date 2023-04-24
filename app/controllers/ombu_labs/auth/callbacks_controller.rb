@@ -12,7 +12,7 @@ module OmbuLabs
         member_logins = organization_members.map { |member| member["login"] }
 
         if username.in?(member_logins)
-          @user = User.from_omniauth(request.env["omniauth.auth"])
+          @user = OmbuLabs::Auth.user_class.from_omniauth(request.env["omniauth.auth"])
           sign_in_and_redirect @user
         else
           flash[:error] = "This application is only available to members of #{organization_name}."
@@ -21,7 +21,7 @@ module OmbuLabs
       end
 
       def developer
-        @user = User.from_omniauth(request.env["omniauth.auth"])
+        @user = OmbuLabs::Auth.user_class.from_omniauth(request.env["omniauth.auth"])
         sign_in_and_redirect @user
       end
 

@@ -5,6 +5,9 @@ This gem provides an easy way to generate new (Devise) sessions for members of a
 If a user is signing in with GitHub and they are a (public) member of the configured GitHub organization, they will be allowed in.
 
 ## Environment Variables
+
+### GitHub Login
+
 Make sure you configure your ENV variables to use Github authentication.
 
 ```
@@ -33,15 +36,39 @@ Once you create the app and generate credentials for it, make sure you add them 
 GITHUB_APP_ID=xxxxxxxxxxxxxxxxxxxx
 GITHUB_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
+
+### Developer Login
+
+To avoid the need of a GitHub application setup (useful for local development or Heroku Review Apps), the `developer` strategy can be enabled using setting a `SHOW_DEVELOPER_AUTH` variable with any non-blank value (`SHOW_DEVELOPER_AUTH=1` or `SHOW_DEVELOPER_AUTH=true` for example).
+
 ## Getting Started
 
-- Add these lines to your application's Gemfile:
+### Requirements
+
+A `User`-like model that will be used for the authentication (`User`, `Admin`, `Client`, etc).
+
+The database table for that model must have, at least, these fields:
+
+```rb
+create_table :clients do |t|
+  t.string :email, unique: true
+  t.string :provider
+  t.string :uid, unique: true
+  t.string :name
+  t.string :encrypted_password
+end
+```
+
+### Installation
+
+- Add this line to your application's Gemfile:
 
 ```ruby
 gem 'ombu_labs-auth'
 ```
 
 - And then execute:
+
 ```bash
 $ bundle
 ```
@@ -61,11 +88,66 @@ mount OmbuLabs::Auth::Engine, at: '/', as: 'ombu_labs_auth'
 </div>
 ```
 
+> This will default to a basic HTML page included in this gem. To customize this view, check [this section](#customizing-sign-in-page)
+
 - Add the Devise authentication helper to your private objects controllers
 
-```
+```rb
 before_action :authenticate_user!
 ```
+
+- Include the `OmbuLabsAuthenticable` concern in the authenticable model
+
+```rb
+class Admin < ApplicationRecord
+  include OmbuLabsAuthenticable
+  ...
+end
+```
+
+- Tell `OmbuLabs::Auth` the user class name and table for the authenticable model
+
+```rb
+# config/initializers/ombu_labs-auth.rb
+OmbuLabs::Auth.user_class_name = "Admin" # defaults to "User" if not set
+OmbuLabs::Auth.users_table_name = :admins # defaults to :users if not set
+```
+
+> You can skip this step if the table is called `users` and the model is called `User`
+
+- Log Out action
+
+A link to `ombu_labs_auth.destroy_user_session_path` with method `DELETE` can be used. If rails-ujs is not available, a `button_to` can be used.
+
+```
+<%= link_to "Sign out", ombu_labs_auth.destroy_user_session_path, method: :delete, class: "button magenta" %>
+```
+
+### TODO: create a rails template to do all the previous steps automatically
+
+## Customizing sign in page
+
+The gem provides a basic html template to select the authentication method. To customize it, create a view at `views/devise/session/new.html.erb` and a layout at `views/layouts/devise.html.erb`.
+
+Include this snippet in the `new` view:
+
+```
+<%- Devise.omniauth_providers.each do |provider| %>
+  <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(OmbuLabs::Auth.user_class, provider), method: :post %><br />
+<% end -%>
+```
+
+To use a `link_to` helper instead of a `button_to` helper to, rails-ujs is needed to support making a `POST` request with link tags. Then, replace with:
+
+```
+<%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(OmbuLabs::Auth.user_class, provider), method: :post, data: { 'turbo-method' => :post } %><br />
+```
+
+> If this intermediate page is not needed, the button/link to `omniauth_authorize_path` can be used directly.
+
+## Running tests
+
+Run `rake app:test:all` to run all tests and `rake app:test` to skip system tests.
 
 ## Caveats
 
@@ -78,4 +160,5 @@ Have a fix for a problem you've been running into or an idea for a new feature y
 Take a look at the [Contributing document](https://github.com/fastruby/ombu_labs-auth/blob/main/CONTRIBUTING.md) for instructions to set up the repo on your machine and create a good Pull Request.
 
 ## License
+
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
