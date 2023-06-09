@@ -159,6 +159,22 @@ Have a fix for a problem you've been running into or an idea for a new feature y
 
 Take a look at the [Contributing document](https://github.com/fastruby/ombu_labs-auth/blob/main/CONTRIBUTING.md) for instructions to set up the repo on your machine and create a good Pull Request.
 
+## Release
+
+If you are looking to contribute in the gem you need to be aware that we are using the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) specification to release versions in this gem.
+
+which means, when doing a contribution your commit message must have the following structure
+
+```git
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+[here](https://www.conventionalcommits.org/en/v1.0.0/#examples) you can find some commit's examples.
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
