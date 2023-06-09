@@ -16,9 +16,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * [BUGFIX: Resolve Github Omniauth dependency](https://github.com/fastruby/ombu_labs-auth/pull/19)
 
+## 1.0.0 (2023-06-09)
+
+
+### Miscellaneous
+
+* update wording ([7d9acc7](https://github.com/fastruby/ombu_labs-auth/commit/7d9acc7254d86ff6f2839ceb144da3d13218a646))
+* **workflow:** Add release workflow ([3c8947a](https://github.com/fastruby/ombu_labs-auth/commit/3c8947ad5ae3b5fe3964287d11a37a6dc36604fe))
+
 ## 0.1.0 [(commits)](https://github.com/fastruby/ombu_labs-auth/compare/6efa57eda3bd3f93e0f245342eb2a317574c32ff...v0.1.0)
 
 * [FEATURE: Add Devise](https://github.com/fastruby/ombu_labs-auth/pull/2)
 * [FEATURE: Add Omniauth](https://github.com/fastruby/ombu_labs-auth/pull/3)
-
-
