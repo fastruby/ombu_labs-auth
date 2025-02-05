@@ -1,3 +1,5 @@
+require "test_helper"
+
 class CallbacksControllerTest < ActionDispatch::IntegrationTest
   GITHUB_INFO = {
     "id" => "12345",
