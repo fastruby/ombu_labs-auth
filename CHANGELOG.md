@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## main [(unreleased)](https://github.com/fastruby/ombu_labs-auth/compare/6efa57eda3bd3f93e0f245342eb2a317574c32ff...main)
 
-* [BUGFIX: Resolve Github Omniauth dependency](https://github.com/fastruby/ombu_labs-auth/pull/19)
+* [FEATURE: Add Rails 7.2 compatibility](https://github.com/fastruby/ombu_labs-auth/pull/24)
 
 ## 1.0.0 (2023-06-09)
 
