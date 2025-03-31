@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Specify your gem's dependencies in ombu_labs-auth.gemspec.
 gemspec
 
-gem 'sqlite3', '~> 1.5', '>= 1.5.3'
+gem "sqlite3", "~> 2.6"
 
 gem "sprockets-rails"
 
