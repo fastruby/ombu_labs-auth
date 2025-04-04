@@ -1,4 +1,4 @@
-# Changelog
+# CHANGELOG
 
 All notable changes to this project will be documented in this file.
 
@@ -12,12 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [BUGFIX: ---------------](https://github.com/fastruby/ombu_labs-auth/-----)
 ```
 
-## main [(unreleased)](https://github.com/fastruby/ombu_labs-auth/compare/6efa57eda3bd3f93e0f245342eb2a317574c32ff...main)
+## main [(unreleased)](https://github.com/fastruby/ombu_labs-auth/compare/v1.1.0...main)
+
+*
+
+## 1.1.0 (2025-04-03) [(commits)](https://github.com/fastruby/ombu_labs-auth/compare/v1.0.0...v1.1.0)
 
 * [FEATURE: Add Rails 7.2 compatibility](https://github.com/fastruby/ombu_labs-auth/pull/24)
+* [FEATURE: Add Rails 8.0 compatibility](https://github.com/fastruby/ombu_labs-auth/pull/25)
 
-## 1.0.0 (2023-06-09)
-
+## 1.0.0 (2023-06-09) [(commits)](https://github.com/fastruby/ombu_labs-auth/compare/v0.1.0...v1.0.0)
 
 ### Miscellaneous
 
