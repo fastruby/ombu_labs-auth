@@ -13,10 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ```
 
 ## main [(unreleased)](https://github.com/fastruby/ombu_labs-auth/compare/v1.1.0...main)
-* [FEATURE: turbo: false to sign_in using oauth](https://github.com/fastruby/ombu_labs-auth/pull/26)
-
 
 *
+
+## 1.1.1 (2025-08-21) [(commits)](https://github.com/fastruby/ombu_labs-auth/compare/v1.1.0...v1.1.1)
+
+* [BUGFIX: turbo: false to sign_in using oauth](https://github.com/fastruby/ombu_labs-auth/pull/26)
+
 
 ## 1.1.0 (2025-04-03) [(commits)](https://github.com/fastruby/ombu_labs-auth/compare/v1.0.0...v1.1.0)
 
