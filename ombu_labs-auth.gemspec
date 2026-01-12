@@ -26,6 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "omniauth-google-oauth2", "~> 1.1"
   spec.add_dependency "omniauth-rails_csrf_protection"
   spec.add_development_dependency "capybara"
-  spec.add_development_dependency "selenium-webdriver", ">= 4.11"
+  spec.add_development_dependency "webdrivers"
   spec.add_development_dependency "puma"
 end
