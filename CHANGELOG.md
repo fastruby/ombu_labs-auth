@@ -12,9 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [BUGFIX: ---------------](https://github.com/fastruby/ombu_labs-auth/-----)
 ```
 
-## main [(unreleased)](https://github.com/fastruby/ombu_labs-auth/compare/v1.1.0...main)
+## main [(unreleased)](https://github.com/fastruby/ombu_labs-auth/compare/v1.2.0...main)
 
-*
+
+## 1.2.0 (2026-07-16) [(commits)](https://github.com/fastruby/ombu_labs-auth/compare/v1.1.1...v1.2.0)
+
+* [CHORE: Loosen dependencies on Rails and Devise](https://github.com/fastruby/ombu_labs-auth/pull/28)
 
 ## 1.1.1 (2025-08-21) [(commits)](https://github.com/fastruby/ombu_labs-auth/compare/v1.1.0...v1.1.1)
 
